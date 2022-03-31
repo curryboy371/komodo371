@@ -15,9 +15,11 @@ class KOMODO_API UKTitleMainPage : public UKPage
 	GENERATED_BODY()
 	
 public:
-
 	UFUNCTION(BlueprintCallable)
 	void OnLoginButton();
+
+	UFUNCTION(BlueprintCallable)
+	void SuccessLogin(); // tempname get login packet
 
 protected:
 	UPROPERTY(BlueprintReadWrite, Category = "AccountInfo")

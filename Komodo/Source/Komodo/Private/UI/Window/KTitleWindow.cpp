@@ -3,6 +3,3 @@
 
 #include "KTitleWindow.h"
 
-void AKTitleWindow::Initialize_Window()
-{
-}

@@ -16,7 +16,6 @@ class KOMODO_API AKTitleWindow : public AKWindow
 	
 	public:
 
-	virtual void Initialize_Window() override;
 	
 
 

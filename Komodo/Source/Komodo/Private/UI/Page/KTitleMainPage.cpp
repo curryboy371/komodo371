@@ -5,7 +5,8 @@
 
 #include "KGameInstance.h"
 
-#include "Manager/KNetworkManager.h"
+#include "KWindowManager.h"
+#include "KNetworkManager.h"
 
 void UKTitleMainPage::OnLoginButton()
 {
@@ -24,4 +25,20 @@ void UKTitleMainPage::OnLoginButton()
 	}
 
 
+}
+
+void UKTitleMainPage::SuccessLogin()
+{
+	if (GetGameInstance())
+	{
+		UKGameInstance* KGameInstance = Cast<UKGameInstance>(GetGameInstance());
+		if (KGameInstance)
+		{
+			UKWindowManager* WindowMgr = KGameInstance->GetWindowManager();
+			if (WindowMgr)
+			{
+				WindowMgr->CreateKWindow(EWindow_Table::CHARACTERSELECT_WINDOW);
+			}
+		}
+	}
 }

@@ -29,12 +29,15 @@ void AKWindow::Tick(float DeltaTime)
 
 }
 
-void AKWindow::Initialize_Window()
+void AKWindow::Initialize_Window(const bool bActive/* = true*/, const bool bVisible/* = true*/)
 {
 	MainPageSources_.Empty();
 	ExtraPageSources_.Empty();
 	MainPages_.Empty();
 	ExtraPages_.Empty();
+
+	SetActiveWindow(bActive);
+	SetVisibleWindow(bVisible);
 }
 
 void AKWindow::CreatePage()

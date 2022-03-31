@@ -29,7 +29,7 @@ public:
 
 
 public:
-	virtual void Initialize_Window();
+	virtual void Initialize_Window(const bool bActive = true, const bool bVisible = true);
 	virtual void CreatePage();
 
 public:
@@ -56,7 +56,6 @@ protected:
 
 	UPROPERTY(EditAnywhere, Category = "Window | PageSetting")
 	EWindow_Table EWindow_ID_ = EWindow_Table::INVAILD_WINDOW;
-
 
 
 	UPROPERTY()

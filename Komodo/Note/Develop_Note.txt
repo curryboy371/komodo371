@@ -28,3 +28,25 @@ tablemanager 만들어서 setting
 table 만들고..
 
 window manager에서 table 불러와서 viewport에 띄우게 하려고 하는중...
+
+----------------------
+22.03.30 
+뷰포트 띄우기 작업 계속해서 진행...
+
+테이블이 제대로 불러오는지확인
+
+아마 page createpage에서 막혓을거야 어제
+
+
+--------------------
+22.03.31
+page create 완료
+table에서 불러와 window 생성하고 window의 page로 creatwidget(page)하여 viewport까지 띄웠음.
+
+출력 컴파일 message가 언리얼에서 안먹는걸로 보여
+messagelog 라는 모듈을 사용하려다가 말았음 안되서
+
+window change 만들었고 (winddow 지우기 코드 추가필요)
+
+ui는 cm_화 시켜서 관리하도록 하였음
+background image를 property화 하려고하는데 안된 상ㅇ태이다.

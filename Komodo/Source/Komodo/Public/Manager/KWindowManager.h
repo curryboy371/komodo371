@@ -19,7 +19,7 @@ public:
 
 	
 	UFUNCTION(BlueprintCallable)
-	void CreateWindow(EWindow_Table eWindowValue);
+	void CreateKWindow(EWindow_Table eWindowValue);
 	void AddNewWindow(const bool bFullWindow);
 
 

@@ -15,10 +15,10 @@ void UKWindowManager::Initialize_Manager()
 	
 
 
-	CreateWindow(EWindow_Table::TITLE_WINDOW);
+	CreateKWindow(EWindow_Table::TITLE_WINDOW);
 }
 
-void UKWindowManager::CreateWindow(EWindow_Table eWindowValue)
+void UKWindowManager::CreateKWindow(EWindow_Table eWindowValue)
 {
 	if (UKUtill::GetKGameInstance())
 	{
@@ -35,6 +35,7 @@ void UKWindowManager::CreateWindow(EWindow_Table eWindowValue)
 		}
 
 		//__TODO(If_this_window_can_duplicate);
+		//WindowEntity->bisduplicated
 		for (auto& window : CreatedWindows_)
 		{
 			if (window)
@@ -74,16 +75,15 @@ void UKWindowManager::CreateWindow(EWindow_Table eWindowValue)
 		AKWindow* NewWindow = World->SpawnActor<AKWindow>(GeneratedBP, WinLocation);
 		if (NewWindow)
 		{
-			CreatedWindows_.Add(NewWindow);
-			NewWindow->CreatePage();
-			RecentWindow_ = NewWindow;
-
+			//WindowEntity->bisfullscreen
 			AddNewWindow(true /*temp*/);
+			NewWindow->CreatePage();
+			NewWindow->Initialize_Window();
+
+			RecentWindow_ = NewWindow;
+			CreatedWindows_.Add(NewWindow);
 		}
-
 	}
-
-
 }
 
 // 새로운 Window가 출력되었을 때 기존에 visible되던 window 처리할 함수
