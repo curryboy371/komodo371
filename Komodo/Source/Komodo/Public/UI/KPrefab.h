@@ -15,9 +15,16 @@ class KOMODO_API UKPrefab : public UUserWidget
 	GENERATED_BODY()
 	
 public:
-	void SetVisible(const bool bSet);
+	virtual void Initialize_Widget(const int32 zorder);
 
-private:
-	//print on viewprot or not
+	virtual void SetVisible(const bool bSet);
+
+	void SetZOrder(const int32 z) { Zorder_ = z; }
+
+protected:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "KPrefab")
+	int32 Zorder_;
+
+	// SelfHitTestInvisible or Collapsed
 	bool bVisible_ = false;
 };

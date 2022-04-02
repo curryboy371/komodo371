@@ -20,9 +20,10 @@ public:
 	
 	UFUNCTION(BlueprintCallable)
 	void CreateKWindow(EWindow_Table eWindowValue);
-	void AddNewWindow(const bool bFullWindow);
+	void AddNewWindow(const bool bcreate = true);
 
 
+	
 
 public:
 	UFUNCTION(BlueprintCallable)
@@ -36,4 +37,7 @@ protected:
 	TWeakObjectPtr<class AKWindow> RecentWindow_;
 
 	//TArray<class UKPage> Ma
+
+private:
+	static const int32 ADD_ZORDER_VALUE_ = 1;
 };

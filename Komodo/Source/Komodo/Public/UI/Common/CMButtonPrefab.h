@@ -17,9 +17,13 @@ class KOMODO_API UCMButtonPrefab : public UKPrefab
 public:
 	UCMButtonPrefab();
 
+	virtual void SetVisible(const bool bSet) override;
+
+	void SetDisable(const bool bSet);
 public:
-	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CM_Button")
-	//class UTextBlock* btn_textblock_;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CM_Button")
-	FText btn_text_;// = FText::Format(LOCTEXT("Komodo","Button"));
+	FText btn_text_;
+
+private:
+	bool bDisable_ = false;
 };

@@ -14,5 +14,7 @@ class KOMODO_API UKPage : public UKPrefab
 {
 	GENERATED_BODY()
 	
+public:
+	virtual void Initialize_Widget(const int32 zorder);
 
 };

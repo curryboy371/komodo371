@@ -29,7 +29,7 @@ public:
 
 
 public:
-	virtual void Initialize_Window(const bool bActive = true, const bool bVisible = true);
+	virtual void Initialize_Window(const int32 zorder, const bool bActive = true, const bool bVisible = true);
 	virtual void CreatePage();
 
 public:
@@ -38,7 +38,7 @@ public:
 
 public:
 	EWindow_Table Get_Window_ID() { return EWindow_ID_; }
-
+	const int32 Get_ZOrder() { return Zorder_; }
 
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Window | PageSetting")
@@ -65,7 +65,7 @@ protected:
 	bool bVisible_ = false;
 
 private:
-
+	int32 Zorder_;
 
 
 

@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "UI/KPrefab.h"
-#include "Engine/Texture.h"
+#include "Styling/SlateBrush.h"
 #include "CMMainPagePrefab.generated.h"
 
 /**
@@ -18,8 +18,8 @@ public:
 	UCMMainPagePrefab();
 
 public:
-	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CM_MainPage")
-	//UTexture bg_texture;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CM_MainPage")
+	FSlateBrush bg_sbrush_;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CM_MainPage")
 	FText title_text_;

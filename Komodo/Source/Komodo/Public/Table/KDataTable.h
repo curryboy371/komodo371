@@ -14,15 +14,24 @@ struct FWindowTableEntity : public FTableRowBase
 	GENERATED_BODY()
 
 	public:
-		FWindowTableEntity() : id(1), path(TEXT("")), name(TEXT("")) {}
+		FWindowTableEntity() : bfullscreen(false), bisduplicated(false), id(0), zorder(0), path(TEXT("")), name(TEXT("")) {}
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Data")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WindowTableData")
+	bool bfullscreen; // 풀스크린 window인가
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WindowTableData")
+	int32 bisduplicated; // 중복생성 가능한 window인가
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WindowTableData")
 	int32 id;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Data")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WindowTableData")
+	int32 zorder;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WindowTableData")
 	FString path;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Data")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WindowTableData")
 	FString name;
 };
 

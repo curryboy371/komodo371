@@ -29,15 +29,26 @@ void AKWindow::Tick(float DeltaTime)
 
 }
 
-void AKWindow::Initialize_Window(const bool bActive/* = true*/, const bool bVisible/* = true*/)
+void AKWindow::Initialize_Window(const int32 zorder, const bool bActive/* = true*/, const bool bVisible/* = true*/)
 {
-	MainPageSources_.Empty();
-	ExtraPageSources_.Empty();
-	MainPages_.Empty();
-	ExtraPages_.Empty();
-
 	SetActiveWindow(bActive);
 	SetVisibleWindow(bVisible);
+
+	for (auto& page : MainPages_)
+	{
+		if (page)
+		{
+			page->Initialize_Widget(zorder);
+		}
+	}
+
+	for (auto& page : ExtraPages_)
+	{
+		if (page)
+		{
+			page->Initialize_Widget(zorder);
+		}
+	}
 }
 
 void AKWindow::CreatePage()
@@ -57,11 +68,9 @@ void AKWindow::CreatePage()
 		UUserWidget* page_widget = CreateWidget<UUserWidget>(World, src);
 		if (page_widget)
 		{
-
 			UKPage* page = Cast<UKPage>(page_widget);
 			if (page)
 			{
-				page->SetVisible(true);
 				MainPages_.Add(page);
 			}
 		}
@@ -102,18 +111,12 @@ void AKWindow::SetVisibleWindow(const bool bSet)
 
 	bVisible_ = bSet;
 
-	if (bVisible_ && bActive_)
+	for (auto& page : MainPages_)
 	{
-		for (auto& page : MainPages_)
+		if (page)
 		{
-			if (page)
-			{
-				page->SetVisible(bSet);
-			}
+			page->SetVisible(bSet);
 		}
-	}
-	else
-	{
 
 	}
 }

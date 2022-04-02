@@ -25,8 +25,7 @@ public class Komodo : ModuleRules
 
 
 
-        PrivateDependencyModuleNames.AddRange(new string[] { "MessageLog" });
-
+        PrivateDependencyModuleNames.AddRange(new string[] { "MessageLog", "Slate", "SlateCore" });
 
         string ThirdPartyPath = Path.GetFullPath(Path.Combine(ModuleDirectory, "../../External/"));
 

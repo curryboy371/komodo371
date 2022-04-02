@@ -50,3 +50,13 @@ window change 만들었고 (winddow 지우기 코드 추가필요)
 
 ui는 cm_화 시켜서 관리하도록 하였음
 background image를 property화 하려고하는데 안된 상ㅇ태이다.
+
+------------------------
+22.04.01
+
+git 업로드를 위한 자동화 진행 필요
+
+slate brush 사용을 위해 slate, slatecore 모듈 로드
+
+
+isinviewport라는 함수가 있음
