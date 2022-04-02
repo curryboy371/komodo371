@@ -14,4 +14,11 @@ class KOMODO_API UKCharacterSelectMainPage : public UKPage
 {
 	GENERATED_BODY()
 	
+public:
+	UFUNCTION(BlueprintCallable)
+	void OnCreateCharacterBtn(); 
+
+protected:
+	UPROPERTY(BlueprintReadWrite, Category = "CaracterInfo")
+	FString CharacterInfo_;
 };

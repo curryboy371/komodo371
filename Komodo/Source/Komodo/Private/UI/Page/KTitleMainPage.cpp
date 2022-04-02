@@ -19,12 +19,10 @@ void UKTitleMainPage::OnLoginButton()
 
 			if (NetworkMgr)
 			{
-				NetworkMgr->Call(AccountInfo_);
+				NetworkMgr->CSLoginReq(AccountInfo_);
 			}
 		}
 	}
-
-
 }
 
 void UKTitleMainPage::SuccessLogin()

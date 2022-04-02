@@ -59,4 +59,11 @@ git 업로드를 위한 자동화 진행 필요
 slate brush 사용을 위해 slate, slatecore 모듈 로드
 
 
-isinviewport라는 함수가 있음
+isinviewport로 검사함. 
+page z값 업데이트에 대해 고민해봐야함.
+---------------
+04.02 
+
+네트워크 매니저 패킷 코드 추가
+로그인, 캐릭터 생성 패킷 네트워크 매니저에 적용
+

@@ -15,6 +15,4 @@ enum class EWindow_Table : uint8
 	TITLE_WINDOW = 1	UMETA(DisplayName = "Title_Window"),
 	CHARACTERSELECT_WINDOW = 2	UMETA(DisplayName = "CharacterSelect_Window"),
 	MAX_WINDOW = 3	UMETA(DisplayName = "MAX_WINDOW"),
-
-
 };
